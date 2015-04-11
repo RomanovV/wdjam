@@ -5,7 +5,9 @@
 
 # Declare characters used by this game.
 
-define n = Character('Narrador', color="#c8ffc8")
+define n = Character('Narrador', color="#ffffff")
+define r = Character('Recepcionista', color="ffffff")
+define b = Character('Bartender', color = "ffffff")
 
 image personagem taberneiro = "garçoUMMMM.png"
 image tela = "tela.png"
@@ -16,11 +18,11 @@ label houseHub(carta=0, envelope=0, jornal=0):
       "Voltar para a casa do seu padrinho":
          jump menuPadrinho1
       "Ir para o bar" if carta == 1:
-         call expression "bar" pass (algo)
+         call expression "bar"
       "Ir para Bivlioteca publica" if envelope == 1:
-         call expression "bibliotecaPublica" pass (outro_algo)
+         call expression "bibliotecaPublica"
       "Ir para os esgotos" if jornal== 1:
-          call expression "esgotos" pass (mais_um_algo)
+          call expression "esgotos"
 
 # The game starts here.
 label start:
@@ -182,10 +184,58 @@ label biblioteca:
         "Voltar":
            call menuPadrinho1(carta, envelope, jornal)
 label bibliotecaPublica:
-  n "Biblioteca publica"
+  n "A biblioteca pública. Um prédio cinzento de mármore lúgrebe. Você nunca realmente veio aqui antes, afinal, nunca precisou. Estantes enormes, de dois andares de altura, ocupam todas as paredes. Pequenas mesas de leitura ocupam corredores no centro do prédio. Logo a sua frente está a recepcionista. Todo o lugar está bastante vazio, na verdade. "
+  n "Você não vê ninguém além da recepcionista. Você não deve ser o único a não gostar de ler."
+  
+  menu:
+   "Perguntar à recepcionista sobre o livro":
+     n "Você se aproxima da recepcionista, que está entretida com um livro de bolso. Ela olha para você quando se aproxima:"
+     r "Pois não?"
+     n "Você explica, de forma resumida, que encontrou o cartão da biblioteca de seu padrinho e viu que ele estava devendo um livro. Mas, como você não achou o livro em lugar nenhum, veio aqui para conseguir mais detalhes."
+     n "A funcionária se mostra um pouco incomodada com o fato, afinal o livro já está com quase uma semana de atraso, e desaparecido. Ainda assim, ela te indica o nome da obra."
+     n "Você pede para ver outra edição do livro, para poder facilitar na sua busca, e ela te indica a seção correta."
+     n "O livro é um estranho e antigo tomo sobre demonologia. Segundo a introdução, foi escrito para ajudar a identificar e combater diversos males sobrenaturais que poderiam ser liberados sobre a humanidade. "
+     n "Por que diabos seu padrinho estaria interessado em tal crendice?"
+     n "..."
+     n "Você se despede da recepcionista, prometendo procurar o livro perdido, e volta pra casa."
+     call houseHub()
 label bar:
-  n "bar"
+  n "Este pequeno bar nunca realmente chamou sua atenção. Escondido entre uma alfaiataria e uma loja de penhores, a janela está sempre tão suja de fuligem que não se pode ver através. O ambiente interno não é nada melhor. Quase não se pode ver um palmo diante do nariz por causa da fumaça. Alguns bancos comuns se encontram na frente do balcão. Na parede, por toda extensão do bar, pequenas mesas com cadeiras estofadas concentram a maioria dos clientes."
+  n "O bartender está de costas para você, pegando alguma coisa da estante.Nesse horário o bar não está muito cheio."
+  menu:
+   "Conversar com o bartender":
+    n "Você pergunta ao bartender se ele por acaso conhece seu padrinho, por nome."
+    n "Ele responde negativamente"
+    n "Voce então pergunta pela aparência"
+    n "Ele responde que nenhum dos regulares se encaixa nessa descrição, e ele não consegue se lembrar de todos os clientes."
+    n "Mudando de técnica, você pergunta se ele se lembra de dois senhores bem vestidos, um deles seu padrinho, que se encontraram no bar na noite anterior."
+    b "Bem, conhecendo minha clientela, dizer que são bem vestidos já elimina a metade."
+    b "As únicas pessoas assim que vieram na noite passada foram o Lorde Wayne e um convidado."
+    b "Pensando bem, este convidado cabia na descrição do seu padrinho..."
+    n "Voce agradece pela ajuda, mas sai ainda mais confuso."
+    n "Será que o estimado Lorde Wayne saberia me explicar o desaparecimento do meu padrinho? Talvez devesse encontrá-lo na câmara. "
+    n "Se correr posso chegar antes do almoço. Você pensa."
+   "Pedir uma bebida":
+    n "Você se aproxima do balcão e pede uma cerveja. O bartender deixa de lado o que estava fazendo e se põem a te servir. "
 label esgotos:
-  n "esgotos"
-
+  n "Você entra nos esgotos, descendo uma série de escadas na margem do rio."
+  n "O túnel que você se encontra é bem pequeno, sua cabeça quase toca o teto. Esse túnel está todo tomado de musgos, revestindo as paredes. "
+  n "O ambiente é muito escuro, você não tem certeza onde está pisando, e um fio de água passa pelo meio do túnel, fazendo com que seus passos façam muito barulho"
+  n "Existe uma abertura no lado esquerdo, por onde chega uma lux bruxuleante. Alguma coisa parece estranha sobre este local."
+  menu:
+   "Entrar na abertura":
+      u "Quando você tenta entrar no aposento, é agarrado por trás. Você não consegue ver seu atacante, mas consegue sentir muito bem a ponta de uma adaga contra sua garganta."
+      call Game_Over()
+   "Espiar o aposento":
+      n "Lentamente, agachado, você se aproxima da abertura."
+      n "O aposento a sua frente é bem grande, semicircular e revestida de pedras."
+      n "Um grupo de talvez dez pessoas, cobertas com túnicas roxas se encontra no centro"
+      n "Eles estão cantando numa língua desconhecida para você, e parecem estar em transe. No meio do círculo uma figura solitária se contorce no chão. "
+      n "Uma mulher, nua, de não mais de 20 anos. Conforme o canto chega a seu ápice, uma das figuras se separa do grupo e avança, ameaçadoramente, em direção a mulher no chão."
+      #colocar a opçao de tentar salvar ela....gerando mais um game over 
+      n "De algum lugar nas dobras de seu manto ele saca uma adaga de aparência sinistra, que, com toda força, desce no peito da moça. Ela solta um grito aterrorizante, por apenas um momento, e então se cala."
+      n "Atordoado, você percebe que todos se encontram em silêncio. O assassino, no centro do círculo, remove seu capuz."
+      n "Você senta, atordoado. Não consegue crer no que viu."
+      n "O assassino não é ninguém menos que Lorde Wayne, líder da câmara e mais forte candidato a sucessão do primeiro ministro."
+      n "Rápido, mas silenciosamente, você retorna a superfície."
 return
