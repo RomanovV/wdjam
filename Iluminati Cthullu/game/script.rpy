@@ -32,6 +32,11 @@ label houseHub(carta=0, envelope=0, jornal=0, esgoto=0):
 # The game starts here.
 label start:
     $ bar = 0
+    $ carta = 0
+    $ envelope = 0
+    $ jornal = 0
+    $ esgoto = 0
+    
     n "Seu apartamento."
     n "Nunca foi muita coisa mesmo, principalmente levando em consideração que você mora sozinho."
     n "Logo a sua frente pode-se ver sua sala, com seu velho sofá roído de traças e sua lareira. Alguns livros se encontram empilhados num canto, visto que você ainda não conseguiu comprar uma estante. A sua esquerda você pode ver sua cozinha, nas sombras. Seu quarto se encontra no final do corredor. Nada lá além da sua cama, desarrumada, e um pequeno armário."
