@@ -16,18 +16,22 @@ image tela = "tela.png"
 
 label houseHub(carta=0, envelope=0, jornal=0, esgoto=0):
   while True:
+    n "esgoto [esgoto]"
     menu:
       "Voltar para a casa do seu padrinho":
-         jump menuPadrinho1(carta, envelope, jornal)
+         call menuPadrinho1(carta, envelope, jornal)
       "Ir para o bar" if carta == 1:
          call expression "bar"
       "Ir para Biblioteca publica" if envelope == 1:
          call expression "bibliotecaPublica"
       "Ir para os esgotos" if jornal== 1:
          call expression "esgotos" pass (esgoto)
+      "Ir para o camara" if bar == 1:
+         call expression "camara" pass (esgoto)
 
 # The game starts here.
 label start:
+    $ bar = 0
     n "Seu apartamento."
     n "Nunca foi muita coisa mesmo, principalmente levando em consideração que você mora sozinho."
     n "Logo a sua frente pode-se ver sua sala, com seu velho sofá roído de traças e sua lareira. Alguns livros se encontram empilhados num canto, visto que você ainda não conseguiu comprar uma estante. A sua esquerda você pode ver sua cozinha, nas sombras. Seu quarto se encontra no final do corredor. Nada lá além da sua cama, desarrumada, e um pequeno armário."
@@ -175,21 +179,27 @@ label bar:
   n "O ambiente interno també não tem nada de mais."
   n "Alguns banquinhos comuns se encontram na frente do balcão. Na parede, por toda extensão do bar, pequenas mesas com cadeiras estofadas concentram a maioria dos clientes."
   n "O bartender está de costas para você, pegando alguma coisa da estante. Nesse horário o bar não está muito cheio."
-  menu:
-   "Conversar com o bartender":
-    n "Você pergunta ao bartender se ele por acaso conhece seu padrinho, por nome."
-    n "Ele responde negativamente"
-    n "Você então pergunta, descrevendo sua aparência"
-    n "Ele responde que nenhum dos regulares se encaixa nessa descrição, e ele infelizmente não consegue se lembrar de todos os clientes."
-    n "Mudando de técnica, você pergunta se ele se lembra de dois senhores bem vestidos, um deles este seu padrinho, que se encontraram no bar na noite anterior."
-    b "Bem, conhecendo minha clientela, dizer que são bem vestidos já elimina a metade."
-    b "As únicas pessoas assim que vieram na noite passada foram o Lorde Wayne e um convidado."
-    b "Pensando bem, este convidado cabia na descrição do seu padrinho..."
-    n "Voce agradece pela ajuda, mas sai ainda mais confuso."
-    n "Será que o estimado Lorde Wayne saberia me explicar o desaparecimento do meu padrinho? Talvez devesse encontrá-lo na câmara. "
-    n "Se correr posso chegar antes do almoço. Você pensa."
-   "Pedir uma bebida":
-    n "Você se aproxima do balcão e pede uma cerveja. O bartender deixa de lado o que estava fazendo para te servir. "
+  while True:
+      menu:
+       "Conversar com o bartender":
+          n "Você pergunta ao bartender se ele por acaso conhece seu padrinho, por nome."
+          n "Ele responde negativamente"
+          n "Você então pergunta, descrevendo sua aparência"
+          n "Ele responde que nenhum dos regulares se encaixa nessa descrição, e ele infelizmente não consegue se lembrar de todos os clientes."
+          n "Mudando de técnica, você pergunta se ele se lembra de dois senhores bem vestidos, um deles este seu padrinho, que se encontraram no bar na noite anterior."
+          b "Bem, conhecendo minha clientela, dizer que são bem vestidos já elimina a metade."
+          b "As únicas pessoas assim que vieram na noite passada foram o Lorde Wayne e um convidado."
+          b "Pensando bem, este convidado cabia na descrição do seu padrinho..."
+          n "Voce agradece pela ajuda, mas sai ainda mais confuso."
+          n "Será que o estimado Lorde Wayne saberia me explicar o desaparecimento do meu padrinho? Talvez devesse encontrá-lo na câmara. "
+          n "Se correr posso chegar antes do almoço. Você pensa."
+          $ bar = 1
+       "Pedir uma bebida":
+          n "Você se aproxima do balcão e pede uma cerveja. O bartender deixa de lado o que estava fazendo para te servir. "
+       "Voltar para casa":
+          jump houseHub
+
+
 
 ################################################ Esgotos ##############################################################
 
@@ -240,7 +250,7 @@ label camara(esgoto = 0):
     
     menu:
         "Se aproximar silenciosamente":
-           if esoto == 0:
+           if esgoto == 0:
             d "...e é por isso que nós devemos agir rápido."
             n "Você reconhece essa voz, é a daquele político famoso e renomado discursante, Lorde Wayne."
             w "Não podemos esperar nem mais um dia, o ritual deve ser realizado esta noite. Como vão os preparativos?"
