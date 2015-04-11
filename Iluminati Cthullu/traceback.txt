@@ -1,33 +1,97 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 185, in script call
-    call menuPadrinho1(carta, envelope, jornal)
-  File "game/script.rpy", line 80, in script call
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
     call houseHub(carta, envelope, jornal)
-  File "game/script.rpy", line 25, in script call
-    call expression "esgotos" pass (mais_um_algo)
-  File "game/script.rpy", line 227, in script
-    u "Quando você tenta entrar no aposento, é agarrado por trás. Você não consegue ver seu atacante, mas consegue sentir muito bem a ponta de uma adaga contra sua garganta."
-Exception: Sayer 'u' is not defined.
+  File "game/script.rpy", line 27, in script call
+    call expression "esgotos" pass (esgoto)
+  File "game/script.rpy", line 229, in script call
+    n "Rápido, mas silenciosamente, você retorna a superfície."
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 23, in script call
+    call expression "bar"
+  File "game/script.rpy", line 211, in script call
+    n "Ao tentar escapar, sente em suas costas uma enorme e grossa........faca, e sua vida se esvai."
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 27, in script call
+    call expression "esgotos" pass (esgoto)
+  File "game/script.rpy", line 229, in script call
+    n "Rápido, mas silenciosamente, você retorna a superfície."
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 23, in script call
+    call expression "bar"
+  File "game/script.rpy", line 211, in script call
+    n "Ao tentar escapar, sente em suas costas uma enorme e grossa........faca, e sua vida se esvai."
+ScriptError: could not find label 'Game_Over'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 185, in script call
-    call menuPadrinho1(carta, envelope, jornal)
-  File "game/script.rpy", line 80, in script call
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
     call houseHub(carta, envelope, jornal)
-  File "game/script.rpy", line 25, in script call
-    call expression "esgotos" pass (mais_um_algo)
-  File "game/script.rpy", line 227, in script
-    u "Quando você tenta entrar no aposento, é agarrado por trás. Você não consegue ver seu atacante, mas consegue sentir muito bem a ponta de uma adaga contra sua garganta."
-  File "/home/yuri/Downloads/renpy-6.99.1-sdk/renpy/ast.py", line 573, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "/home/yuri/Downloads/renpy-6.99.1-sdk/renpy/ast.py", line 491, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who.encode("utf-8"))
-Exception: Sayer 'u' is not defined.
+  File "game/script.rpy", line 27, in script call
+    call expression "esgotos" pass (esgoto)
+  File "game/script.rpy", line 229, in script call
+    n "Rápido, mas silenciosamente, você retorna a superfície."
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 23, in script call
+    call expression "bar"
+  File "game/script.rpy", line 211, in script call
+    n "Ao tentar escapar, sente em suas costas uma enorme e grossa........faca, e sua vida se esvai."
+  File "/home/fuvity/Desktop/renpy-6.99.1-sdk/renpy/ast.py", line 1283, in execute
+    rv = renpy.game.context().call(label, return_site=self.next.name)
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 27, in script call
+    call expression "esgotos" pass (esgoto)
+  File "game/script.rpy", line 229, in script call
+    n "Rápido, mas silenciosamente, você retorna a superfície."
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 154, in script call
+    "Voltar":
+  File "game/script.rpy", line 89, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 23, in script call
+    call expression "bar"
+  File "game/script.rpy", line 211, in script call
+    n "Ao tentar escapar, sente em suas costas uma enorme e grossa........faca, e sua vida se esvai."
+  File "/home/fuvity/Desktop/renpy-6.99.1-sdk/renpy/script.py", line 602, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'Game_Over'.
 
-Linux-3.19.3-200.fc21.x86_64-x86_64-with-fedora-21-Twenty_One
+Linux-3.16.0-33-generic-x86_64-with-debian-jessie-sid
 Ren'Py 6.99.1.329
 Iluminati Cthullu 0.0

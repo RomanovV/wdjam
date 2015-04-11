@@ -2,8 +2,42 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 22: reached end of line when expecting ':'.
-    "Ir para os esgotos" if jornal
-                                  ^
+File "game/script.rpy", line 263: expected statement.
+    "Político da Câmara" “...e é por isso que nós devemos agir rápido.”
+                          ^
+
+File "game/script.rpy", line 265: end of line expected.
+(Perhaps you left out a " at the end of the first line.)
+    "Lorde Wayne" "Não podemos esperar nem mais um dia, o ritual deve ser realizado esta noite. Como vão os preparativos?”
+                n "... Ritual?"
+                    ^
+                "Desconhecido" “Meu senhor, falta apenas o últimos sacrifício, no último nexus.”
+                n "...Nexus? ...Sacrifício?"
+                n "Essa voz não me é familiar, mas não me atrevo a mover, com medo de ser percebido."
+                "Lorde Wayne" “Eu mesmo tomarei conta disso. Reúna todos, estarei lá.”
+                "Desconhecido" “Sim, meu senhor. Depois iremos imediatamente para a mansão do Campo Alto?”
+                n "Meu padrinho mora no Campo Alto!"
+                "Lorde Wayne" “Imediatamente. Não disse que não temos tempo a perder? Agora vá, te encontro mais tarde.”
+                "Desconhecido" “Senhor.”
+                n "Você escuta se levantarem e começaram a andar. Felizmente não vêm em sua direção. O que era essa conversa de rituais e sacrifícios?"
+                $ camara = True
+                call houseHub()
+                
+               #<<<<<<<<<<IF ESGOTO = 1>>>>>>>>>>>>>>
+                "Político da Câmara" “...e é por isso que nós devemos agir rápido.”
+                n "Você reconhece essa voz, é aquele maldito Lorde Wayne."
+                "Lorde Wayne" "Não podemos esperar nem mais um dia, o ritual deve ser realizado esta noite. Como vão os preparativos?”
+
+File "game/script.rpy", line 284: expected statement.
+    "Desconhecido" “Meu senhor realizou o último sacrifício, no último nexus.”
+                                                           ^
+
+File "game/script.rpy", line 290: expected statement.
+    "Lorde Wayne" “Imediatamente. Não disse que não temos tempo a perder? Agora vá, te encontro mais tarde.”
+                                ^
+
+File "game/script.rpy", line 291: expected statement.
+    "Desconhecido" “Senhor.”
+                          ^
 
 Ren'Py Version: Ren'Py 6.99.1.329
