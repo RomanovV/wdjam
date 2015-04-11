@@ -1,0 +1,39 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 183, in script call
+    call menuPadrinho1(carta, envelope, jornal)
+  File "game/script.rpy", line 78, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 23, in script call
+    call expression "esgotos" pass (mais_um_algo)
+  File "game/script.rpy", line 188, in script
+    label esgotos:
+  File "game/script.rpy", line 23, in <module>
+    call expression "esgotos" pass (mais_um_algo)
+NameError: name 'mais_um_algo' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 183, in script call
+    call menuPadrinho1(carta, envelope, jornal)
+  File "game/script.rpy", line 78, in script call
+    call houseHub(carta, envelope, jornal)
+  File "game/script.rpy", line 23, in script call
+    call expression "esgotos" pass (mais_um_algo)
+  File "game/script.rpy", line 188, in script
+    label esgotos:
+  File "/home/yuri/Downloads/renpy-6.99.1-sdk/renpy/ast.py", line 1288, in execute
+    args, kwargs = self.arguments.evaluate()
+  File "/home/yuri/Downloads/renpy-6.99.1-sdk/renpy/ast.py", line 180, in evaluate
+    args.append(renpy.python.py_eval(v, locals=scope))
+  File "/home/yuri/Downloads/renpy-6.99.1-sdk/renpy/python.py", line 1466, in py_eval
+    return eval(py_compile(source, 'eval'), globals, locals)
+  File "game/script.rpy", line 23, in <module>
+    call expression "esgotos" pass (mais_um_algo)
+NameError: name 'mais_um_algo' is not defined
+
+Linux-3.19.3-200.fc21.x86_64-x86_64-with-fedora-21-Twenty_One
+Ren'Py 6.99.1.329
+Iluminati Cthullu 0.0
