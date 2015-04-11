@@ -1,4 +1,5 @@
 # wdjam
 -------------------
-Ioannis Viking Pedro Joao Yuri
+# Nomes
+Ioannis Viking Pedro Joao IFCH Gabriel
 -------------------
